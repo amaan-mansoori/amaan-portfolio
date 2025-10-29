@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 export default function App() {
   const email = "mansoori280904@gmail.com";
-  const github = "https://github.com/amaan-mansoor";
+  const github = "https://github.com/amaan-mansoori";
   const linkedin = "https://www.linkedin.com/in/amaan-mansoori-01b451285/";
   const resume = "#";
 
