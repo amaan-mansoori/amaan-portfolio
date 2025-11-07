@@ -1,17 +1,13 @@
 "use client";
-
-import { ReactNode, useEffect } from "react";
+import { useEffect } from "react";
 import Lenis from "lenis";
 
-export default function SmoothScroll({ children }: { children: ReactNode }) {
+export default function useSmoothScroll() {
   useEffect(() => {
     const lenis = new Lenis({
-      smooth: true,
-      lerp: 0.08,          // lower = stronger smoothing
-      duration: 1.35,      // extend motion for glide
-      wheelMultiplier: 0.9, // softens Windows touchpad input
-      touchMultiplier: 1.3, // smooth touch gestures
-      gestureDirection: "vertical",
+      lerp: 0.08,          // smoothing strength
+      duration: 1.35,      // glide duration
+      wheelMultiplier: 0.9 // softens touchpad scroll
     });
 
     function raf(time: number) {
@@ -22,10 +18,8 @@ export default function SmoothScroll({ children }: { children: ReactNode }) {
     requestAnimationFrame(raf);
 
     return () => {
-      // @ts-ignore
-      if (lenis && typeof lenis.destroy === "function") lenis.destroy();
+      lenis.destroy();
     };
   }, []);
-
-  return <>{children}</>;
 }
+
