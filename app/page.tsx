@@ -176,7 +176,7 @@ export default function Page() {
               "Java Programming Fundamentals",
             ]} />
 
-            <CertGroup logo="/logos/google.jpeg" title="Google Digital Garage" items={[
+            <CertGroup logo="/logos/google.jpeg" title="Google" items={[
               "Fundamentals of Digital Marketing",
             ]} />
           </div>
